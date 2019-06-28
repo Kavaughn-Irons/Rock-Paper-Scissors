@@ -34,7 +34,7 @@ var getOpponent = database.ref("/playerArray/playerArray/"+data.val().opponent.p
             if(picked === false){
             database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/gameObject/rock/").set(true);
             database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/picked/").set(true);
-            database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/goToGame/").set(false);
+            
             picked = true;
             }
             
@@ -44,7 +44,6 @@ var getOpponent = database.ref("/playerArray/playerArray/"+data.val().opponent.p
             if(picked === false){
             database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/gameObject/paper/").set(true);
             database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/picked/").set(true);
-            database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/goToGame/").set(false);
             picked = true;
             }
         });
@@ -53,7 +52,6 @@ var getOpponent = database.ref("/playerArray/playerArray/"+data.val().opponent.p
             if(picked === false){
             database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/gameObject/scissors/").set(true);
             database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/picked/").set(true);
-            database.ref("/playerArray/playerArray/"+data.val().playerNumber+"/goToGame/").set(false);
             picked = true;
             }
         });      
@@ -89,12 +87,12 @@ getOpponent.on("value",function(getOpponentData){
   
                 if(opponentPick === "rock"){
                    if(ourPick === "rock"){
-                  
+                    
+                       
                        $(".win-lose").text("Tie!")
                        $(".lobby-button").html("<button type'button' class='btn btn-primary created-lobby-button' style='height: 70px; width: 200px;'><h1>Lobby</h1></button>")
                        
                        $(".created-lobby-button").on("click",function(){
-                               
                            getOurInfo.once("value",function(lobbyData){
                            database.ref("/mostRecentPlayer/mostRecentPlayer/").set(lobbyData.val())
                            location.href = "lobby.html"

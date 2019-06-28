@@ -84,9 +84,10 @@ database.ref("/playerArray/playerArray/"+String(classNumber)+"/amountOfRequests/
             if(dataTwo.val().goToGame === true){
             database.ref("/playerArray/playerArray/"+playerNum+"/goToGame/").set(true);    
             }
-        },function(data){});
-   
-        
+        },function(dataTwo){});
+            if(dataTwo.val().goToGame === true){
+            database.ref("/playerArray/playerArray/"+playerNum+"/goToGame/").set(true);    
+            }
     });
         
      acceptButtonClassNum++;   
@@ -97,8 +98,7 @@ database.ref("/playerArray/playerArray/"+String(classNumber)+"/amountOfRequests/
     }
     
     if(data.val().playerArray[playerNum].goToGame === true){
-        database.ref("/mostRecentPlayer/mostRecentPlayer/").set(data.val().playerArray[playerNum]);
-        location.href = "arena.html"
+        database.ref("/mostRecentPlayer/mostRecentPlayer/").set(data.val().playerArray[playerNum]).then(location.href = "arena.html");
     }
 
 },function(data){
