@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Giph Search</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+    <div class="no-gutter">
+        <div class="row">
+            <div class="col-xl-12" style="height: 65px; background-color: black;">
+                <h1 style="text-align: center; color: white;">Rock Paper Scissors</h1>
+            </div>
+        </div>
+    </div>
+<body>
+    
+    <div class="no-gutter">
+        <div class="row">
+            <div class="col-xl-4 text-center" style="height: 65px; margin-top: 75px;">
+                <h1 class="header-username">Username:</h1>
+            </div>
+            <div class="col-xl-4 text-center" style="height: 65px; margin-top: 75px;">
+                <h1 class="header-wins">Wins:</h1>
+            </div>
+            <div class="col-xl-4 text-center" style="height: 65px; margin-top: 75px;">
+                <h1 class="header-losses">Losses:</h1>
+            </div>
+            
+        </div>
+        <div class="row" style="height: 900px;">
+
+
+            <div class="col-xl-12 text-center" style="height: 65px; margin-top: 75px;">
+                <div class="card bg-light mb-3" style="width: 80%; height: 400px; margin: auto; margin-bottom: 50px;">
+                  <div class="card-header">Lobby</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Find Players Here</h5>
+                    <p class="card-text">The lobby shows all the players you can play with.</p>
+                    <hr>
+                      <div class="lobby-body">
+                        
+                      </div>  
+                  </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-12 text-center" style="height: 65px; margin-top: 75px;">
+                <div class="card bg-light mb-3" style="width: 80%; height: 400px; margin: auto; margin-bottom: 50px;">
+                  <div class="card-header">Requests</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Find Player Requests Here</h5>
+                    <p class="card-text">Players requesting to play you will be shown here.</p>
+                    <hr>
+                      <div class="requests-body container">
+
+                      </div>  
+                  </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+  <!-- jQuery -->
+<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>  
+<script src="https://code.jquery.com/jquery.js"></script>
+
+    
+
+
+    
+
+
+  <!-- Script -->
+  <script src="lobby.js"></script>
+
+</body>
+
+</html>
