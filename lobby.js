@@ -82,9 +82,7 @@ database.ref("/playerArray/playerArray/"+String(classNumber)+"/amountOfRequests/
         var dataThree = database.ref("/playerArray/playerArray/"+fullOpponentId);
         dataThree.on("value",function(dataTwo){
             if(dataTwo.val().goToGame === true){
-            database.ref("/mostRecentPlayer/mostRecentPlayer/").set(thisObject);
-
-            location.href = "arena.html"
+            database.ref("/playerArray/playerArray/"+playerNum+"/goToGame/").set(true);    
             }
         },function(data){});
    
