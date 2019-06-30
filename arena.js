@@ -21,6 +21,7 @@ var picked = false;
 var opponentPick = "";
 var ourPick = "";
 database.ref("/mostRecentPlayer/mostRecentPlayer/").once("value",function(data){
+database.ref("/mostRecentPlayer/mostRecentPlayer/").set(data.val().opponent);
 preMadeWins = data.val().wins+1;
 preMadeLosses = data.val().losses+1;    
     username = data.val().username;
