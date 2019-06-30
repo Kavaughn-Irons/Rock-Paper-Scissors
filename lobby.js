@@ -81,13 +81,28 @@ database.ref("/playerArray/playerArray/"+String(classNumber)+"/amountOfRequests/
         
         var dataThree = database.ref("/playerArray/playerArray/"+fullOpponentId);
         dataThree.on("value",function(dataTwo){
+            
+
+            
             if(dataTwo.val().goToGame === true){
-            database.ref("/playerArray/playerArray/"+playerNum+"/goToGame/").set(true);    
+                var countDown = 2;
+                var delay = setInterval(function(){
+                
+                
+                console.log(countDown);
+                    if(countDown === 0){    
+                    console.log("here!!!");
+                    firebase.database().ref("/playerArray/playerArray/"+playerNum+"/goToGame/").set(true); 
+                    clearInterval(delay);
+                    }
+                    countDown = countDown - 1;
+                },1000);
+                   
             }
+        
+        
         },function(dataTwo){});
-            if(dataTwo.val().goToGame === true){
-            database.ref("/playerArray/playerArray/"+playerNum+"/goToGame/").set(true);    
-            }
+
     });
         
      acceptButtonClassNum++;   
@@ -98,6 +113,7 @@ database.ref("/playerArray/playerArray/"+String(classNumber)+"/amountOfRequests/
     }
     
     if(data.val().playerArray[playerNum].goToGame === true){
+   
         database.ref("/mostRecentPlayer/mostRecentPlayer/").set(data.val().playerArray[playerNum]).then(location.href = "arena.html");
     }
 

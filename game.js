@@ -15,7 +15,7 @@ var database = firebase.database();
 var playerObject = {
 
     requests:[],amountOfRequests : 0,wins : 0, losses : 0, username : "",playerNumber : 0,goToGame : false, 
-    gameObject : {rock: false, paper: false, scissors : false},opponentReady : false,opponent : {},picked : false
+    gameObject : {rock: false, paper: false, scissors : false},opponent : {},picked : false
     
 };
 var players = [];
